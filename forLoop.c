@@ -21,14 +21,61 @@ for (int j=0; j<=6; j++){
     if (j!=3&&j!=6)
         printf("%d\n", j);
 }
-*/
+
 // 4 printf from 1500 to 2700 that divisible by 5 and 7
 for (int l=1500; l<=2700; l+=5){
     if (l%7==0)
         printf("%d\n", l);
 }
 
+//5 get a positive input validate and print multiplication table. 
+int num;
+do {
+    printf("enter an integer please: \n");
+    scanf("%d", &num);
+} while (num<=0);
+for (int m=1; m<=10; m++){
+    printf("%d * %d = %d\n", m, num, m*num);
+}
 
+//6 input a positive integer, validate and check if it's prime
+int number, count=0; 
+do {
+    printf("enter an integer please: \n");
+    scanf("%d", &number);
+} while (number<=0);
+for (int n=2; n<number; n++){
+    if (number%n==0) {
+        count=count+1;
+    }
+    else {
+        count=count +0;
+        }
+}
+if (count==0)
+    printf("this is prime number");
+else printf("this is not a prime number");
 
+//7 input 2 positive number, validate and find the value of number1 ^ number 2
+int num1, num2, product=1; 
+do {
+    printf("enter two integers please: \n");
+    scanf("%d %d", &num1, &num2);
+} while (num1<=0 || num2<=0);
+for (int o=1; o<=num2; o++){
+    product = product * num1;
+}
+printf("the value of %d raised to the power of %d is %d\n", num1, num2, product);
+*/
+//8 input an positive integer, validate and find factorial value. 
+int number1, factorial=1; 
+do {
+    printf("enter an integer please: \n");
+    scanf("%d", &number1);
+} while (number1<=0);
+for (int p=1; p<=number1; p++){
+    factorial = factorial * p;
+}
+printf("the factorial value is %d\n", factorial);
 return 0;
 }
