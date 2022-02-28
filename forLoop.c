@@ -66,7 +66,7 @@ for (int o=1; o<=num2; o++){
     product = product * num1;
 }
 printf("the value of %d raised to the power of %d is %d\n", num1, num2, product);
-*/
+
 //8 input an positive integer, validate and find factorial value. 
 int number1, factorial=1; 
 do {
@@ -77,5 +77,29 @@ for (int p=1; p<=number1; p++){
     factorial = factorial * p;
 }
 printf("the factorial value is %d\n", factorial);
+*/
+int number, value, num_even=0, num_odd=0, sum_even=0, sum_odd=0;
+printf("how many integer in your set?\n");
+scanf("%d", &number);
+
+for (int i=1; i<=number; i++){
+    printf("enter one integer in your set please?\n");
+    scanf("%d", &value);
+
+    if (value%2==0){
+        num_even=num_even+1;
+        num_even=sum_even+value;}
+    else {
+        num_odd=num_odd+1;
+        sum_odd=sum_odd+value;}
+    }
+    
+printf("number of even number is %d\n", num_even);
+printf("number of odd number is %d\n", num_odd);
+printf("sum of even number is %d\n", sum_even);
+printf("sum of odd number is %d\n", sum_odd);
+
+
+
 return 0;
 }
