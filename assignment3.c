@@ -16,16 +16,17 @@ for (int i=1; i<=5; i++){
     }
     printf("\n");
     }
-//3
+//3 
 
 for (int i=1; i<=5; i++){
-    for (int j=1; j<=5; j++){
-        for (int n=5-j; n<=5&&n>=1; ){
-        printf("*");
+    for (int j=1; j<i; j++){
+        printf(".");
+        }
+    for (int z=1; z<=6-i; z++){
+        printf("0");
     }
-        printf("0");}
-    printf("\n"); 
-}
+    printf("\n");
+    }
 //4
 for (int i=1; i<=5; i++){
     for (int j=1; j<=i; j++){
@@ -53,14 +54,26 @@ for (int i=1; i<=5; i++){
         printf("%d", i-j);
     }
     printf("\n");
-    } 
+    }  
 //8
+int n8=1;
 for (int i=1; i<=5; i++){
     for (int j=0; j<i; j++){
-        printf("%d", i+j);
+        printf("%d", n8);
+        n8++;
         printf(" ");
     }
     printf("\n");
+    } 
+//9
+for (int i=1; i<=5; i++){
+    for (int j=1; j<=5-i; j++){
+        printf(" ");
+        }
+    for (int z=1; z<=i; z++){
+        printf("X");
     }
+    printf("\n");
+    } 
 return 0; 
 }
