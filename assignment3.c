@@ -54,7 +54,17 @@ for (int i=1; i<=5; i++){
         printf("%d", i-j);
     }
     printf("\n");
-    }  
+    }
+    
+//Another way :-
+    
+     for (int i = 1; i <= 5; i++){
+        for (int j = 0; j < i; j++){
+            printf("%d",i-j);
+        }
+        printf("\n");
+    }
+    
 //8
 int n8=1;
 for (int i=1; i<=5; i++){
@@ -77,3 +87,14 @@ for (int i=1; i<=5; i++){
     } 
 return 0; 
 }
+//Another way :- 
+
+   for (int i = 1; i <= 5; i++){
+       for (int j = 5; j >= 1; j--){
+            if(j>i)
+                printf(" ");
+            else
+                printf("x");
+       }
+        printf("\n");
+   }
