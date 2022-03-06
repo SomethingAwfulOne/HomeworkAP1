@@ -27,6 +27,16 @@ for (int i=1; i<=5; i++){
     }
     printf("\n");
     }
+// Another way : 
+      for (int i = 1; i <= 5; i++){
+        for (int j = 1; j <= 5; j++){
+            if(i>j)
+                printf(".");
+            else
+                printf("0");
+        }
+        printf("\n");
+    }
 //4
 for (int i=1; i<=5; i++){
     for (int j=1; j<=i; j++){
@@ -87,6 +97,7 @@ for (int i=1; i<=5; i++){
     } 
 return 0; 
 }
+
 //Another way :- 
 
    for (int i = 1; i <= 5; i++){
