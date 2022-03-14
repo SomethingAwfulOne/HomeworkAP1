@@ -90,7 +90,14 @@ for (int i=1; i<=5; i++){
         }
         printf("\n");
     }
-    
+ // another way from Ali: 
+ 
+    for (int y=1; y <= 5; y++){
+    for (int x=y; x > 0; x--){
+        printf("%d",x);
+    }
+     printf("\n");
+    }
 //8
 int n8=1;
 for (int i=1; i<=5; i++){
