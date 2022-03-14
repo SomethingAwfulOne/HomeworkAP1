@@ -27,7 +27,7 @@ for (int i=1; i<=5; i++){
     }
     printf("\n");
     }
-// Another way : 
+// Another way from Mayur: 
       for (int i = 1; i <= 5; i++){
         for (int j = 1; j <= 5; j++){
             if(i>j)
@@ -37,6 +37,22 @@ for (int i=1; i<=5; i++){
         }
         printf("\n");
     }
+// another way from Maria
+int i;
+int j;
+int n;
+for (i=0; i<=4; i++)
+{
+     for(n=1; n<=i; n++)
+    {
+        printf(".");
+    }
+    for (j=5; j>i; j--)
+    {
+        printf("0");
+    }
+    printf("\n");
+}
 //4
 for (int i=1; i<=5; i++){
     for (int j=1; j<=i; j++){
@@ -66,7 +82,7 @@ for (int i=1; i<=5; i++){
     printf("\n");
     }
     
-//Another way :-
+//Another way from Mayur:-
     
      for (int i = 1; i <= 5; i++){
         for (int j = 0; j < i; j++){
@@ -98,7 +114,7 @@ for (int i=1; i<=5; i++){
 return 0; 
 }
 
-//Another way :- 
+//Another way from Mayur :
 
    for (int i = 1; i <= 5; i++){
        for (int j = 5; j >= 1; j--){
