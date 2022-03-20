@@ -4,7 +4,7 @@ float addition(int n){
     float sum = 0;
     float number;
     for(int i=1; i<=n; i++){
-        printf("Enter value %d: \n", i);
+        printf("\nEnter value %d: ", i);
         scanf("%f", &number);
         sum=sum+number;
     }
@@ -13,10 +13,10 @@ float addition(int n){
 float division(){
     float num1, num2;
     float div;
-    printf("Enter the value to divide: \n");
+    printf("\n Enter the value to divide: ");
     scanf("%f", &num1);
     do {
-        printf("Enter the divider (not 0):\n");
+        printf("\nEnter the divider (not 0):");
         scanf("%f", &num2);}
         while (num2==0);
     div=num1/num2;
@@ -26,7 +26,7 @@ float multiplication(int n){
     float product = 1;
     float number;
     for(int i=1; i<=n; i++){
-        printf("Enter value %d: \n", i);
+        printf("\nEnter value %d: ", i);
         scanf("%f", &number);
         product=product*number;
     }
@@ -35,9 +35,9 @@ float multiplication(int n){
 float subtraction(){
     float num1, num2;
     float sub;
-    printf("Enter the first value: \n");
+    printf("\nEnter the first value: ");
     scanf("%f", &num1);
-    printf("Enter value to subtract:\n");
+    printf("\nEnter value to subtract:");
     scanf("%f", &num2);
     sub=num1-num2;
     return sub;
@@ -48,56 +48,69 @@ int main(){
     float result;
     int num;
     char ans;
-    printf("Numeric calculation\n");
+    printf("\t\t\t    Numeric calculation\n");
     do{
-        printf("Main menu operators choice\n");
-        printf("1 - ADDITION\n");
-        printf("2 - DIVISION\n");
-        printf("3 - MULTIPLICATION\n");
-        printf("4 - SUBTRACTION\n");
-        printf("5 - QUIT\n");
-        printf("Make your choice (1-5): \n");
+        printf("\t\t\t Main menu operators choice\n");
+        printf("\t\t\t-----------------------------\n\n");
+        printf("1 - ADDITION");
+        printf("\n2 - DIVISION");
+        printf("\n3 - MULTIPLICATION");
+        printf("\n4 - SUBTRACTION");
+        printf("\n5 - QUIT");
+        printf("\nMake your choice (1-5): ");
         scanf("%d", &choice);}
     while (choice <1|| choice >5);
     switch (choice)
     {
     case 1: {
-        printf("ADDITION OPERATION\n");
+        printf("\t\t\t    ADDITION OPERATION\n");
+        printf("\t\t\t-----------------------------\n");
         do {
-            printf("Enter the number of values to add: \n");
+            printf("\nEnter the number of values to add: ");
             scanf("%d", &num);
             result=addition(num);
-            printf("The results is %0.2f\n", result);
-            printf("Would you like to do another addition? (Y/N)\n");
+            printf("\nThe results is %0.2f", result);
+            printf("\nWould you like to do another addition? (Y/N)");
             scanf("%s",&ans); }
         while (ans=='y');
     }
         break;
     case 2: {
         
-            printf("DIVISION OPERATION\n");
+            printf("\t\t\t   DIVISION OPERATION\n");
+            printf("\t\t\t----------------------------\n");
         do{
             result=division();
-            printf("The results is %0.2f\n", result);}
+            printf("The results is %0.2f\n", result);
+            printf("\nWould you like to do another division? (Y/N)");
+            scanf("%s",&ans);}
         while (ans=='y');
     }
         break;
     case 3: {
-        printf("MULTIPLICATION OPERATION\n");
+        printf("\t\t\t   MULTIPLICATION OPERATION\n");
+        printf("\t\t\t------------------------------\n");
         do{
-        printf("Enter the number of values to add: \n");
+        printf("\nEnter the number of values to multilize: ");
         scanf("%d", &num);
         result=multiplication(num);
-        printf("The results is %0.2f\n", result);}
-        while (ans=='Y');
-    }
-    case 4: {
-        printf("SUBTRACTION OPERATION\n");
-        do{
-        result= subtraction();
-        printf("The results is %0.2f\n", result);}
+        printf("\nThe results is %0.2f", result);
+        printf("\nWould you like to do another multiplication? (Y/N)");
+        scanf("%s",&ans);}
         while (ans=='y');
     }
+        break;
+    case 4: {
+        printf("\t\t\t   SUBTRACTION OPERATION\n");
+        printf("\t\t\t----------------------------\n");
+        do{
+        result= subtraction();
+        printf("\nThe results is %0.2f", result);
+        printf("\nWould you like to do another subtraction? (Y/N)");
+        scanf("%s",&ans);}
+        while (ans=='y');
+    }
+        break;
     default:
         break;
     }
