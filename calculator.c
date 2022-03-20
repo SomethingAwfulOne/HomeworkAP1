@@ -15,8 +15,10 @@ float division(){
     float div;
     printf("Enter the value to divide: \n");
     scanf("%f", &num1);
-    printf("Enter the divider (not 0):\n");
-    scanf("%f", &num2);
+    do {
+        printf("Enter the divider (not 0):\n");
+        scanf("%f", &num2);}
+        while (num2==0);
     div=num1/num2;
     return div;
 }
