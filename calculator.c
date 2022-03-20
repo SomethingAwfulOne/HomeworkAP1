@@ -66,8 +66,10 @@ int main(){
         printf("\t\t\t    ADDITION OPERATION\n");
         printf("\t\t\t-----------------------------\n");
         do {
+            do{
             printf("\nEnter the number of values to add: ");
-            scanf("%d", &num);
+            scanf("%d", &num);}
+            while (num<2||num>20);
             result=addition(num);
             printf("\nThe results is %0.2f", result);
             printf("\nWould you like to do another addition? (Y/N)");
