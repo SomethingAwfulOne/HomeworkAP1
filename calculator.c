@@ -49,14 +49,16 @@ int main(){
     int num;
     char ans;
     printf("Numeric calculation\n");
-    printf("Main menu operators choice\n");
-    printf("1 - ADDITION\n");
-    printf("2 - DIVISION\n");
-    printf("3 - MULTIPLICATION\n");
-    printf("4 - SUBTRACTION\n");
-    printf("5 - QUIT\n");
-    printf("Make your choice (1-5): \n");
-    scanf("%d", &choice);
+    do{
+        printf("Main menu operators choice\n");
+        printf("1 - ADDITION\n");
+        printf("2 - DIVISION\n");
+        printf("3 - MULTIPLICATION\n");
+        printf("4 - SUBTRACTION\n");
+        printf("5 - QUIT\n");
+        printf("Make your choice (1-5): \n");
+        scanf("%d", &choice);}
+    while (choice <1|| choice >5);
     switch (choice)
     {
     case 1: {
