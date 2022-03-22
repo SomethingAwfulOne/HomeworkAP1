@@ -1,120 +1,133 @@
-#include<stdio.h>
+/*
+* C calculator implemented in menu format getch();
+*/
 
-float addition(int n){
-    float sum = 0;
-    float number;
-    for(int i=1; i<=n; i++){
-        printf("\nEnter value %d: ", i);
-        scanf("%f", &number);
-        sum=sum+number;
-    }
-    return sum;
-}
-float division(){
-    float num1, num2;
-    float div;
-    printf("\n Enter the value to divide: ");
-    scanf("%f", &num1);
-    do {
-        printf("\nEnter the divider (not 0):");
-        scanf("%f", &num2);}
-        while (num2==0);
-    div=num1/num2;
-    return div;
-}
-float multiplication(int n){
-    float product = 1;
-    float number;
-    for(int i=1; i<=n; i++){
-        printf("\nEnter value %d: ", i);
-        scanf("%f", &number);
-        product=product*number;
-    }
-    return product;
-}
-float subtraction(){
-    float num1, num2;
-    float sub;
-    printf("\nEnter the first value: ");
-    scanf("%f", &num1);
-    printf("\nEnter value to subtract:");
-    scanf("%f", &num2);
-    sub=num1-num2;
-    return sub;
-}
+ //some pre processor directives and library inserts
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+#include <string.h>
+#include <math.h>
 
-int main(){
-    int choice;
-    float result;
-    int num;
-    char ans;
-    printf("\t\t\t    Numeric calculation\n");
-    do{
-        printf("\t\t\t Main menu operators choice\n");
-        printf("\t\t\t-----------------------------\n\n");
-        printf("1 - ADDITION");
-        printf("\n2 - DIVISION");
-        printf("\n3 - MULTIPLICATION");
-        printf("\n4 - SUBTRACTION");
-        printf("\n5 - QUIT");
-        printf("\nMake your choice (1-5): ");
-        scanf("%d", &choice);}
-    while (choice <1|| choice >5);
-    switch (choice)
-    {
-    case 1: {
-        printf("\t\t\t    ADDITION OPERATION\n");
-        printf("\t\t\t-----------------------------\n");
-        do {
-            do{
-            printf("\nEnter the number of values to add: ");
-            scanf("%d", &num);}
-            while (num<2||num>20);
-            result=addition(num);
-            printf("\nThe results is %0.2f", result);
-            printf("\nWould you like to do another addition? (Y/N)");
-            scanf("%s",&ans); }
-        while (ans=='y');
-    }
-        break;
-    case 2: {
-        
-            printf("\t\t\t   DIVISION OPERATION\n");
-            printf("\t\t\t----------------------------\n");
-        do{
-            result=division();
-            printf("The results is %0.2f\n", result);
-            printf("\nWould you like to do another division? (Y/N)");
-            scanf("%s",&ans);}
-        while (ans=='y');
-    }
-        break;
-    case 3: {
-        printf("\t\t\t   MULTIPLICATION OPERATION\n");
-        printf("\t\t\t------------------------------\n");
-        do{
-        printf("\nEnter the number of values to multilize: ");
-        scanf("%d", &num);
-        result=multiplication(num);
-        printf("\nThe results is %0.2f", result);
-        printf("\nWould you like to do another multiplication? (Y/N)");
-        scanf("%s",&ans);}
-        while (ans=='y');
-    }
-        break;
-    case 4: {
-        printf("\t\t\t   SUBTRACTION OPERATION\n");
-        printf("\t\t\t----------------------------\n");
-        do{
-        result= subtraction();
-        printf("\nThe results is %0.2f", result);
-        printf("\nWould you like to do another subtraction? (Y/N)");
-        scanf("%s",&ans);}
-        while (ans=='y');
-    }
-        break;
-    default:
-        break;
-    }
+//calculator variables  //global
+char again;
+int add=0,mult=0,sub1=0,sub2=0,div1=0,div2=0,remain=0,total=0,choice=0,howmany=0; 
+
+
+// functions to use
+void addition();
+void substraction();
+void division();
+void multiplication();
+
+
+int main (){ //beginning of main
+
+       do { //big loop keeping you in the program
+            
+          do
+          {     //make a choice menu
+            printf("\n  NUMERIC CALCULATOR");
+            printf("\n Main Menu Operators Choice");
+            printf("\n---------------------------\n");
     
+            printf("\n1 - ADDITION");
+            printf("\n2 - DIVISION");
+            printf("\n3 - MULTIPLICATION");
+            printf("\n4 - SUBSTRACTION");
+            printf("\n5 - QUIT/EXIT");
+            printf("\nWhat operation will we preform? (1-4) (5): ");
+                scanf("%d",&choice);
+                    if (choice==1 || choice==2 || choice==3 || choice==4 || choice==5)  //verify choice
+                        printf("\nChose: %d\n",choice);
+                    else    
+                        printf("\n! ! ! Nuh-uh, Choices are 1 to 5\n");
+          } while (choice <1 || choice >5); //making a choice   //(choice!=1 && choice!=2 && choice!=3 && choice!=4 && choice!=5);
+         
+        //clrscr ();  //clear output screen //didn't work
+        // system ("cls"); //clear output screen //didn't work
+
+        switch(choice){     //which choice //which operation
+            case 1:{ //addition
+                do{
+                    printf("\n ADDITION \n");
+                    addition();     //calls the function
+                        printf("\n Go again? (y / n) \n");  //to stay in the small loop
+                            scanf("%s",&again);
+                }while(again=='y');
+            } break;        //go back to menu
+            case 2:{ //division
+                do{
+                    printf("\n DIVISION \n");
+                    division();     //calls the function
+                        printf("\n Go again? (y / n) \n");  //to stay in the small loop
+                            scanf("%s",&again);
+                }while(again=='y');
+            } break;        //go back to menu
+            case 3:{ //multiplication
+                do{
+                    printf("\n MULTIPLICATION \n");
+                    multiplication();   //calls the function
+                        printf("\n Go again? (y / n) \n");  //to stay in the small loop
+                            scanf("%s",&again);
+                }while(again=='y');
+            } break;        //go back to menu
+            case 4:{ //substraction
+                do{
+                    printf("\n SUBSTRACTION \n");
+                    substraction();     //calls the function
+                        printf("\n Go again? (y / n) \n");  //to stay in the small loop
+                            scanf("%s",&again);
+                }while(again=='y');
+            } break;        //go back to menu
+            default: break;   //leaving menu
+        } //end switch
+
+    }while (choice!=5); //leaving program
+
+return 0; // end of program //menu calculator
 }
+
+    //FUNCTIONS defined beyond here
+    // addition loop
+    void addition(){
+        total=0;
+        howmany = 0;   
+            do{
+                printf("How many numerals are we adding (2 to 20)?: ");
+                    scanf("%d",&howmany);
+            }while (howmany<2 || howmany>20); //verify the loop counter
+            for (int count=1; count<=howmany; count++){ //perform the loop
+                printf("\n%d number: ",count);
+                    scanf("%d",&add);
+                    total=total+add;    //the math
+            }
+            printf("\nYup, that Adds up to: %d \n", total);
+    }
+    // multiplication loop
+    void multiplication(){
+        total=1;
+        howmany = 0;   
+            do{
+                printf("How many numerals are we Multiplying (2 to 20)?: ");
+                    scanf("%d",&howmany);
+            }while (howmany<2 || howmany>20); //verify the loop counter
+                for (int count=1; count<=howmany; count++){     //perform the loop
+                    printf("\n%d number: ",count);
+                        scanf("%d",&mult);
+                        total=total*mult;   //the math
+                }
+            printf("\nAnd, that Multiplies to: %d \n", total);
+    }
+    // subtraction loop
+    void substraction(){
+        total=0;
+            printf("\nEnter the 1st Integer: ");
+                scanf("%d",&sub1);
+                    printf("\nEnter 2nd Integer: ");
+                        scanf("%d",&sub2);    
+                            total=sub1-sub2;    //the math
+            printf("\nSo, the result is: %d \n", total);
+    }
